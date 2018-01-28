@@ -3,7 +3,7 @@ import './App.css';
 
 import Keyboard from './Keyboard';
 
-import SoundPlayer from './utility/sound-player';
+import SoundPlayer from '../utility/sound-player';
 
 class App extends React.Component {
   soundPlayer: SoundPlayer;

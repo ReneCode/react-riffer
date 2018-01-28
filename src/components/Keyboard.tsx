@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import * as utility from './utility/svg';
+import * as utility from '../utility/svg';
 
 const Keyboard = () => {
 
