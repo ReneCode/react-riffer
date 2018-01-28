@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+  <>
+
+  <path id="c1" d='M10 40 L10 0 L0 0 L0 54 L16 54 L16 40 Z' fill="#3e3"/>
+  <path id="c#1" d='M22 40 L22 0 L10 0 L10 40 Z' fill="#e8e"/>
+
+  <path id="d1" d='M22 40 L22 0 L32 0 L32 54 L16 54 L16 40 Z' fill="#666" stroke="#222" />
+
+  <g transform="translate(40,0)">
+    <path d='M6 0 L6 40 L0 40 L0 48 L16 48 L16 40 L10 40 L10 0 Z' fill="#ee8"/>
+  </g>
+
+
+</svg>
