@@ -1,6 +1,6 @@
 
 import Note from '../models/Note';
-import { ActionTypes, SetSpeedAction, PlayNoteAction } from '../actions/actionTypes';
+import { ActionTypes, Actions } from '../actions/actionTypes';
 
 type NoteState = {
   currentNotes: Note[],
@@ -12,7 +12,7 @@ const initialState: NoteState = {
   speed: 120
 };
 
-const noteReducer = (state = initialState, action: SetSpeedAction | PlayNoteAction) => {
+const noteReducer = (state = initialState, action: Actions) => {
   switch (action.type) {
     case ActionTypes.PLAY_NOTE:
       return {

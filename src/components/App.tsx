@@ -5,6 +5,7 @@ import './App.css';
 import store from '../store/store';
 
 import Keyboard from './Keyboard';
+import KeypressHandler from './KeypressHandler';
 
 import SoundPlayer from '../utility/sound-player';
 
@@ -24,6 +25,7 @@ class App extends React.Component {
           <header className="App-header">
             <h1 className="App-title">riffer</h1>
           </header>
+          <KeypressHandler />
           <div className="keyboard">
             <Keyboard/>
           </div>
