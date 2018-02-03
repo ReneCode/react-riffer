@@ -1,9 +1,17 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import * as React from 'react';
+import { connect, Dispatch } from 'react-redux';
 import Note from '../models/Note';
 import { playNoteAction } from '../actions';
+import { NoteState } from '../reducers/noteReducer';
 
-class KeypressHandler extends Component {
+interface StateToProps {
+}
+
+interface DispatchToProps {
+  playNote: (note: Note[]) => void;
+}
+
+class KeypressHandler extends React.Component<DispatchToProps> {
 
   render() {
     return null;
@@ -17,7 +25,7 @@ class KeypressHandler extends Component {
     document.removeEventListener('keydown', this.keyDown.bind(this), false);
   }
 
-  keyDown(event) {
+  keyDown(event: React.KeyboardEvent<HTMLDocument>) {
 
     const mapKeyToNote = {
       'a': 'C4',
@@ -41,15 +49,15 @@ class KeypressHandler extends Component {
         .toLowerCase()
     ];
     if (note) {
-      this.props.playNote([note])
+      this.props.playNote([note]);
     }
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: Dispatch<NoteState>): DispatchToProps => {
   return {
-    playNote: (notes) => dispatch(playNoteAction(notes))
+    playNote: (notes: Note[]) => dispatch(playNoteAction(notes))
   };
-}
+};
 
-export default connect(null, mapDispatchToProps)(KeypressHandler);
+export default connect<StateToProps, DispatchToProps>(null, mapDispatchToProps)(KeypressHandler);

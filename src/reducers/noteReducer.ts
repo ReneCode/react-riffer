@@ -1,20 +1,25 @@
 
 import Note from '../models/Note';
 import { ActionTypes, Actions } from '../actions/actionTypes';
+import SoundPlayer from '../utility/sound-player';
 
-type NoteState = {
+export type NoteState = {
   currentNotes: Note[],
-  speed: number
+  speed: number,
+  soundPlayer: SoundPlayer;
+
 };
 
 const initialState: NoteState = {
   currentNotes: [],
-  speed: 120
+  speed: 120,
+  soundPlayer: new SoundPlayer()
 };
 
 const noteReducer = (state = initialState, action: Actions) => {
   switch (action.type) {
     case ActionTypes.PLAY_NOTE:
+      state.soundPlayer.play(action.notes[0]);
       return {
         ...state,
         currentNotes: action.notes
