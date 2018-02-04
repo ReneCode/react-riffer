@@ -1,3 +1,28 @@
+
+export function nextNote(note: Note): Note {
+  const rawNote = withoutOctave(note);
+  let octave = parseInt(note[note.length - 1]);
+  const noteOrder = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+  const idx = noteOrder.indexOf(rawNote);
+  let retNote;
+  if (idx + 1 < noteOrder.length) {
+    retNote = noteOrder[idx + 1];
+  } else {
+    retNote = noteOrder[0];
+    octave++;
+  } 
+  retNote += octave;
+  return retNote as Note;
+}
+
+export function withoutOctave(note: Note): string {
+  return note.substr(0, note.length - 1);
+}
+
+export function isBlackNote(note: Note): boolean {
+  return note.indexOf('#') >= 0;
+}
+
 type Note =                                                    'A0' | 'A#0' | 'B0'
   | 'C1' | 'C#1' | 'D1' | 'D#1' | 'E1' | 'F1' | 'F#1' | 'G1' | 'G#1'| 'A1' | 'A#1' | 'B1'
   | 'C2' | 'C#2' | 'D2' | 'D#2' | 'E2' | 'F2' | 'F#2' | 'G2' | 'G#2'| 'A2' | 'A#2' | 'B2'
