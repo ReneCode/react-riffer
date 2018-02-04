@@ -8,11 +8,6 @@ import Keyboard from './Keyboard';
 import KeypressHandler from './KeypressHandler';
 
 class App extends React.Component {
-
-  constructor(props: React.Props < string >) {
-    super(props);
-  }
-
   render() {
     return (
       <Provider store={store}>
@@ -22,7 +17,7 @@ class App extends React.Component {
           </header>
           <KeypressHandler />
           <div className="keyboard">
-            <Keyboard/>
+            <Keyboard showNotes="C3 E4"/>
           </div>
         </div>
       </Provider>

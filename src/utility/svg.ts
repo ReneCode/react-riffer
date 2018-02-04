@@ -1,3 +1,4 @@
+
 export const toPath = (points: number[], offset: number = 0): string => {
   let str = '';
   const count = points.length;
