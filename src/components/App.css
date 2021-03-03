@@ -1,33 +1,5 @@
 .App {
   text-align: center;
-}
-
-.App-header {
-  background-color: #9a9;
-  height: 50px;
-  padding: 20px;
-  color: rgb(218, 217, 214);
-}
-
-.App-title {
-  font-size: 1.5em;
-
-}
-
-.App-intro {
-  font-size: large;
-}
-
-.keyboard {
-  height: 50px;
-}
-
-svg {
-  stroke: #333;
-  stroke-width: 0.2px;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  display: flex;
+  flex-direction: column;
 }

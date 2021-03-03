@@ -1,7 +1,7 @@
-import { Howl } from 'howler';
+import { Howl } from "howler";
 
 class SoundPlayer {
-  sounds: {} = {};
+  sounds: Record<string, Howl> = {};
   notes: string[] = [];
 
   constructor() {
@@ -20,22 +20,37 @@ class SoundPlayer {
       return sound;
     }
 
-    const noteFolder = './notes/';
-    const fileName = `${noteFolder}${this.notes.indexOf(note) + 1}-${note.replace('#', '-')}.mp3`;
+    const noteFolder = "./notes/";
+    const fileName = `${noteFolder}${
+      this.notes.indexOf(note) + 1
+    }-${note.replace("#", "-")}.mp3`;
     sound = new Howl({
-      src: [fileName.toLowerCase()]
+      src: [fileName.toLowerCase()],
     });
     this.sounds[note] = sound;
     return sound;
   }
 
   setNotes() {
-    const names = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+    const names = [
+      "C",
+      "C#",
+      "D",
+      "D#",
+      "E",
+      "F",
+      "F#",
+      "G",
+      "G#",
+      "A",
+      "A#",
+      "B",
+    ];
 
     for (let octave = 0; octave < 8; octave++) {
       let startIdx = 0;
       if (octave === 0) {
-        startIdx = names.indexOf('A');
+        startIdx = names.indexOf("A");
       }
       for (let i = startIdx; i < names.length; i++) {
         this.notes.push(`${names[i]}${octave}`);

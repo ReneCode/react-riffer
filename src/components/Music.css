@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+}
+
+.header {
+  background-color: #9a9;
+  height: 50px;
+  padding: 20px;
+  color: rgb(218, 217, 214);
+}
+
+.title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.keyboard {
+  height: 50px;
+}
+
+svg {
+  stroke: #333;
+  stroke-width: 0.2px;
+}
