@@ -4,7 +4,7 @@ const Bookmarks = () => {
   return (
     <ul>
       <li>
-        <a href="https://setgame-server.azurewebsites.net/home">Elixir app</a>
+        <a href="https://setgame-server.azurewebsites.net/home">Elixir App</a>
       </li>
     </ul>
   );
